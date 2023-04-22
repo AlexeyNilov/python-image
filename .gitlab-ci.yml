@@ -1,0 +1,18 @@
+stages:
+  - build
+
+variables:
+  DOCKER_REGISTRY: "todo:443"
+  PYTHON_VERSION: "3.10"
+
+image-build:
+  image:
+    name : ${DOCKER_REGISTRY}/kaniko-project/executor:v1.7.0-debug
+    entrypoint: [""]
+  stage: build
+  script:
+  - mkdir -p $HOME/.docker
+  - cat ${DOCKER_AUTH_CONFIG} > $HOME/.docker/config.json
+  - /kaniko/executor --dockerfile Dockerfile --context ./ --destination ${DOCKER_REGISTRY}/todo/python:latest --build-arg version=${PYTHON_VERSION}
+  tags:
+  - python-image

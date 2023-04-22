@@ -1,3 +1,4 @@
 # python-image
 
-Base Python image
+Python image with some(often used by me) preinstalled packages.
+

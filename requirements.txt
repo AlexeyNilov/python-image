@@ -8,3 +8,6 @@ requests_cache
 sqlitedict
 uvicorn
 redis
+psutil
+pytest
+httpx

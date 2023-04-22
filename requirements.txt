@@ -6,6 +6,5 @@ paramiko
 requests
 requests_cache
 sqlitedict
-urllib3
 uvicorn
 redis

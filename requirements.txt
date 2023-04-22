@@ -11,3 +11,4 @@ redis
 psutil
 pytest
 httpx
+flake8
